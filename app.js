@@ -19,9 +19,11 @@ http.createServer(function (request, response) {
 console.log("App Running on 'localhost:8080'");
 
 function homeRoute(request, response){
-    response.writeHead(200, { "Content-Type": "text/plain" });
-    response.write('Header\n');
-    response.write('Search\n');
-    response.end("Footer");
+    if(request.url === '/'){ //this will execute for only home requests
+        response.writeHead(200, { "Content-Type": "text/plain" });
+        response.write('Header\n');
+        response.write('Search\n');
+        response.end("Footer");
+    }
 
 }
