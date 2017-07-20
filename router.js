@@ -15,7 +15,7 @@ function home(request, response) {
 function user(request, response) {
     var username = request.url.replace("/", "");
     if (username.length > 0) {
-        response.writeHead(200, { "Content-Type": "text/plain" });
+        response.writeHead(200, { "Content-Type": "text/html" });
         //response.write('Header\n');
         var studentProfile = new Profile(username);
         render.view('header', {}, response);
